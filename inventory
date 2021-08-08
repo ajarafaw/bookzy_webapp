@@ -1,0 +1,5 @@
+#[jenkin]
+#localhost
+
+[webserver]
+172.0.0.0 ansible_user=ec2_user

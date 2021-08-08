@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: true
+  gather_facts: false
+  tasks:
+
+  - name: build maven project
+    shell: /usr/share/apache-maven-3.8.1/bin/mvn package
+#    args:
+#      chdir: /root/project/git_wafa/bookzy_webapp_test
+#    register: var
+
+  - debug:
+      var: var
+
