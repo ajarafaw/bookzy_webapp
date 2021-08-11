@@ -1,7 +1,7 @@
 #!/bin/bash
 # tomcat configuration files to copy from git repo. First copy the repo
 # git@github.com:ajarafaw/bookzy_webapp.git
-cd ~/bookzy_webapp/tomcat
+# go to tomcat directory
 yes | cp -p tomcat.service /etc/systemd/system/
 yes | cp -p tomcat-users.xml /opt/tomcat/conf/
 yes | cp -p server.xml /opt/tomcat/conf/
