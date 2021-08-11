@@ -4,9 +4,9 @@
   gather_facts: false
   tasks:
 
-  - name: copy marven project
+  - name: Deploy bookzy_webapp package to Tomcat Webserver
     copy: 
-      src: /var/lib/jenkins/workspace/test123/target/bookzy_webapp-0.0.1-SNAPSHOT.war
+      src: /var/lib/jenkins/workspace/bookzy_webapp/target/bookzy_webapp-0.0.1-SNAPSHOT.war
       dest: /opt/tomcat/webapps/bookzy_webapp.war
       owner: tomcat
       group: tomcat        

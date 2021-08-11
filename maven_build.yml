@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
 
-  - name: build maven project
+  - name: Build bookzy_webapp package in Maven
     shell: /usr/share/apache-maven-3.8.1/bin/mvn package
     register: var
 
