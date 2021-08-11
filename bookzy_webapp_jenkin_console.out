@@ -1,0 +1,137 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/bookzy_webapp
+The recommended git tool is: NONE
+using credential 4b1aa6fb-0ef1-41e4-94cb-25be15fd2c3e
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/bookzy_webapp/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/ajarafaw/bookzy_webapp.git # timeout=10
+Fetching upstream changes from https://github.com/ajarafaw/bookzy_webapp.git
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_ASKPASS to set credentials Github_repo_bookzy_webapp
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/ajarafaw/bookzy_webapp.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 57c2b3fe4cbb954e0ec1c1f6c543afc0e293db72 (refs/remotes/origin/master)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 57c2b3fe4cbb954e0ec1c1f6c543afc0e293db72 # timeout=10
+Commit message: "Update maven_build.yml"
+First time build. Skipping changelog.
+[bookzy_webapp] $ /usr/bin/ansible-playbook playbooks/maven_build.yml -i playbooks/inventory -f 5 --private-key /tmp/ssh8018976414067217008.key -u ec2-user
+
+PLAY [localhost] ***************************************************************
+
+TASK [Build bookzy_webapp package in Maven] ************************************
+[WARNING]: Platform linux on host localhost is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+changed: [localhost]
+
+TASK [debug] *******************************************************************
+ok: [localhost] => {
+    "build.stdout_lines": [
+        "[INFO] Scanning for projects...", 
+        "[INFO] ", 
+        "[INFO] ------------------------< bookzy:bookzy_webapp >------------------------", 
+        "[INFO] Building bookzy_webapp 0.0.1-SNAPSHOT", 
+        "[INFO] --------------------------------[ war ]---------------------------------", 
+        "[INFO] ", 
+        "[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ bookzy_webapp ---", 
+        "[INFO] Using 'UTF-8' encoding to copy filtered resources.", 
+        "[INFO] Using 'UTF-8' encoding to copy filtered properties files.", 
+        "[INFO] Copying 1 resource", 
+        "[INFO] Copying 1 resource", 
+        "[INFO] ", 
+        "[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ bookzy_webapp ---", 
+        "[INFO] Nothing to compile - all classes are up to date", 
+        "[INFO] ", 
+        "[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ bookzy_webapp ---", 
+        "[INFO] Using 'UTF-8' encoding to copy filtered resources.", 
+        "[INFO] Using 'UTF-8' encoding to copy filtered properties files.", 
+        "[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/bookzy_webapp/src/test/resources", 
+        "[INFO] ", 
+        "[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ bookzy_webapp ---", 
+        "[INFO] Nothing to compile - all classes are up to date", 
+        "[INFO] ", 
+        "[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ bookzy_webapp ---", 
+        "[INFO] ", 
+        "[INFO] -------------------------------------------------------", 
+        "[INFO]  T E S T S", 
+        "[INFO] -------------------------------------------------------", 
+        "[INFO] Running bookzy_webapp.BookzyWebappApplicationTests", 
+        "14:24:03.655 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]", 
+        "14:24:03.681 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]", 
+        "14:24:03.750 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [bookzy_webapp.BookzyWebappApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]", 
+        "14:24:03.775 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [bookzy_webapp.BookzyWebappApplicationTests], using SpringBootContextLoader", 
+        "14:24:03.780 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [bookzy_webapp.BookzyWebappApplicationTests]: class path resource [bookzy_webapp/BookzyWebappApplicationTests-context.xml] does not exist", 
+        "14:24:03.782 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [bookzy_webapp.BookzyWebappApplicationTests]: class path resource [bookzy_webapp/BookzyWebappApplicationTestsContext.groovy] does not exist", 
+        "14:24:03.783 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [bookzy_webapp.BookzyWebappApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.", 
+        "14:24:03.785 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [bookzy_webapp.BookzyWebappApplicationTests]: BookzyWebappApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.", 
+        "14:24:03.867 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [bookzy_webapp.BookzyWebappApplicationTests]", 
+        "14:24:04.026 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/lib/jenkins/workspace/bookzy_webapp/target/classes/bookzy_webapp/BookzyWebappApplication.class]", 
+        "14:24:04.029 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration bookzy_webapp.BookzyWebappApplication for test class bookzy_webapp.BookzyWebappApplicationTests", 
+        "14:24:04.211 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [bookzy_webapp.BookzyWebappApplicationTests]: using defaults.", 
+        "14:24:04.212 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]", 
+        "14:24:04.238 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]", 
+        "14:24:04.239 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]", 
+        "14:24:04.241 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1f6c9cd8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b619d14, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@66746f57, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@447a020, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7f36662c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@28e8dde3, org.springframework.test.context.event.EventPublishingTestExecutionListener@6d23017e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@54dcfa5a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1817f1eb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@767e20cf, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3a3e78f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@301ec38b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@17a1e4ca]", 
+        "14:24:04.252 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1d730606 testClass = BookzyWebappApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3bcbb589 testClass = BookzyWebappApplicationTests, locations = '{}', classes = '{class bookzy_webapp.BookzyWebappApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7bbc8656, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7dfb0c0f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@465232e9, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@49c90a9c, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3bcd05cb, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4fe767f3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].", 
+        "14:24:04.331 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}", 
+        "", 
+        "  .   ____          _            __ _ _", 
+        " /\\\\ / ___'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\", 
+        "( ( )\\___ | '_ | '_| | '_ \\/ _` | \\ \\ \\ \\", 
+        " \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )", 
+        "  '  |____| .__|_| |_|_| |_\\__, | / / / /", 
+        " =========|_|==============|___/=/_/_/_/", 
+        " :: Spring Boot ::                (v2.4.2)", 
+        "", 
+        "2021-08-11 14:24:04.890  INFO 4196 --- [           main] b.BookzyWebappApplicationTests           : Starting BookzyWebappApplicationTests using Java 11.0.12 on ip-172-31-10-23.ec2.internal with PID 4196 (started by root in /var/lib/jenkins/workspace/bookzy_webapp)", 
+        "2021-08-11 14:24:04.897  INFO 4196 --- [           main] b.BookzyWebappApplicationTests           : No active profile set, falling back to default profiles: default", 
+        "2021-08-11 14:24:08.212  INFO 4196 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'", 
+        "2021-08-11 14:24:08.571  INFO 4196 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]", 
+        "2021-08-11 14:24:09.036  INFO 4196 --- [           main] b.BookzyWebappApplicationTests           : Started BookzyWebappApplicationTests in 4.675 seconds (JVM running for 7.1)", 
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.674 s - in bookzy_webapp.BookzyWebappApplicationTests", 
+        "2021-08-11 14:24:10.347  INFO 4196 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'", 
+        "[INFO] ", 
+        "[INFO] Results:", 
+        "[INFO] ", 
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0", 
+        "[INFO] ", 
+        "[INFO] ", 
+        "[INFO] --- maven-war-plugin:3.3.1:war (default-war) @ bookzy_webapp ---", 
+        "[INFO] Packaging webapp", 
+        "[INFO] Assembling webapp [bookzy_webapp] in [/var/lib/jenkins/workspace/bookzy_webapp/target/bookzy_webapp-0.0.1-SNAPSHOT]", 
+        "[INFO] Processing war project", 
+        "[INFO] Building war: /var/lib/jenkins/workspace/bookzy_webapp/target/bookzy_webapp-0.0.1-SNAPSHOT.war", 
+        "[INFO] ", 
+        "[INFO] --- spring-boot-maven-plugin:2.4.2:repackage (repackage) @ bookzy_webapp ---", 
+        "[INFO] Replacing main artifact with repackaged archive", 
+        "[INFO] ------------------------------------------------------------------------", 
+        "[INFO] BUILD SUCCESS", 
+        "[INFO] ------------------------------------------------------------------------", 
+        "[INFO] Total time:  14.865 s", 
+        "[INFO] Finished at: 2021-08-11T14:24:12Z", 
+        "[INFO] ------------------------------------------------------------------------"
+    ]
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[bookzy_webapp] $ /usr/bin/ansible-playbook playbooks/tomcat_deploy.yml -i playbooks/inventory -f 5 --private-key /tmp/ssh3525769337240579118.key -u ec2-user
+
+PLAY [webserver] ***************************************************************
+
+TASK [Deploy bookzy_webapp package to Tomcat Webserver] ************************
+[WARNING]: Platform linux on host 3.232.131.97 is using the discovered Python
+interpreter at /usr/bin/python, but future installation of another Python
+interpreter could change this. See https://docs.ansible.com/ansible/2.9/referen
+ce_appendices/interpreter_discovery.html for more information.
+changed: [3.232.131.97]
+
+PLAY RECAP *********************************************************************
+3.232.131.97               : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Finished: SUCCESS
