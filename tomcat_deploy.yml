@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+  become: true
+  gather_facts: false
+  tasks:
+
+  - name: copy marven project
+    copy: 
+      src: /var/lib/jenkins/workspace/test123/target/bookzy_webapp-0.0.1-SNAPSHOT.war
+      dest: /opt/tomcat/webapps/bookzy_webapp.war
+      owner: tomcat
+      group: tomcat        
+      mode: 0640

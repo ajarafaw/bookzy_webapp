@@ -2,4 +2,4 @@
 #localhost
 
 [webserver]
-172.0.0.0 ansible_user=ec2_user
+3.95.245.181
