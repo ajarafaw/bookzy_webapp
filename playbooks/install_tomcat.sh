@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install tomcat
-yum install java -y
+yum install java git -y
 groupadd tomcat
 useradd -s /bin/false -g tomcat -d /home/tomcat tomcat
 cd /tmp
