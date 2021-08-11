@@ -26,7 +26,7 @@
     ec2_group:
       name: aws_security_group.student-sg
       description: aws_security_group.student-sg
-      vpc_id: vpc-06606070944ec2cf8
+      vpc_id: vpc-0e81560a0b96cb943
       state: present
       rules:       # List of firewall inbound rules
         - proto: tcp
