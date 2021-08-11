@@ -6,6 +6,8 @@
 
   - name: Build bookzy_webapp package in Maven
     shell: /usr/share/apache-maven-3.8.1/bin/mvn package
+    args:
+      chdir: /var/lib/jenkins/workspace/bookzy_webapp
     register: build
 
   - debug:
