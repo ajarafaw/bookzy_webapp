@@ -26,7 +26,7 @@
     ec2_group:
       name: aws_security_group.tomcat-sg
       description: aws_security_group.tomcat-sg
-      vpc_id: vpc-0b927408e2e3ddf10
+      vpc_id: vpc-0e81560a0b96cb943
       state: present
       rules:       # List of firewall inbound rules
         - proto: tcp
