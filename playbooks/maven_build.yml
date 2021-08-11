@@ -6,7 +6,7 @@
 
   - name: Build bookzy_webapp package in Maven
     shell: /usr/share/apache-maven-3.8.1/bin/mvn package
-    register: var
+    register: build
 
   - debug:
-      var: var.stdout_lines
+      var: build.stdout_lines
